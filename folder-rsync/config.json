@@ -14,7 +14,7 @@
     "armv7",
     "i386"
   ],
-  "map": ["config", "addons", "backup", "share", "ssl", "media"],
+  "map": ["share"],
   "options": {
 	  "rsyncserver": "server",
     "rootfolder": "hassio-sync",
