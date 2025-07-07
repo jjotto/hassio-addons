@@ -1,0 +1,38 @@
+{
+  "name": "SatDump NOAA APT Add-on",
+  "version": "0.1.0",
+  "slug": "satdump_noaa_apt",
+  "description": "Home Assistant add-on for SatDump, configured for NOAA APT reception with RTL-SDR v3.",
+  "url": "https://github.com/rpatel3001/docker-satdump",
+  "arch": [
+    "aarch64"
+  ],
+  "startup": "before",
+  "boot": "auto",
+  "options": {
+    "frequency_mhz": 137.9125,
+    "gain_db": 40,
+    "sample_rate": 2048000,
+    "duration_seconds": 300,
+    "output_path": "/share/satdump/noaa_apt",
+    "rtl_device_index": 0
+  },
+  "schema": {
+    "frequency_mhz": "float",
+    "gain_db": "int",
+    "sample_rate": "int",
+    "duration_seconds": "int",
+    "output_path": "str",
+    "rtl_device_index": "int?"
+  },
+  "ports": {},
+  "map": [
+    "share:rw",
+    "media:rw",
+    "config:rw"
+  ],
+  "devices": [
+    "/dev/bus/usb"
+  ],
+  "privileged": true
+}
